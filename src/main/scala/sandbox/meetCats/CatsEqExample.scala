@@ -1,9 +1,12 @@
 package sandbox.meetCats
+import java.time.LocalDateTime
+
 import cats.Eq
 import cats.instances.int._
 import cats.instances.option._
 import cats.syntax.eq._
 import cats.syntax.option._
+import CustomEqInstances._
 
 object CatsEqExample {
 
@@ -32,6 +35,17 @@ object CatsEqExample {
 
     val syntaxOptionNotEqual = 1.some =!= none[Int]
     println("cats.syntax.option not equal: 1.some =!= none[Int] " + syntaxOptionNotEqual)
+
+    val date1 = LocalDateTime.now.minusHours(1)
+    println("erste Zeit: " + date1)
+    val date2 = LocalDateTime.now()
+    println("zweite Zeit: " + date2)
+
+    val isTimeEqual = date1 === date1
+    val isTimeDifferent = date1 =!= date2
+
+    println("isTimeEqual: " + isTimeEqual)
+    println("isTimeDifferent: " + isTimeDifferent)
 
   }
 }
