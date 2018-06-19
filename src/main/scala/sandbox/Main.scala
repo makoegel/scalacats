@@ -1,8 +1,9 @@
 package sandbox
 
 import cats.implicits._
+import sandbox.meetCats.CatsEqExample
 //import sandbox.exercisePrintableLibrary.ExecutePrintable
-import sandbox.meetCats.CatsShowExample
+//import sandbox.meetCats.CatsShowExample
 //import sandbox.typeclass.ExecuteJsonWriter
 
 object Main extends App {
@@ -12,5 +13,6 @@ object Main extends App {
 
   // ExecutePrintable.execute
 
-  CatsShowExample.execute()
+  // CatsShowExample.execute()
+  CatsEqExample.execute()
 }
