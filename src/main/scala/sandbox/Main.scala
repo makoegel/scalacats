@@ -1,9 +1,11 @@
 package sandbox
 
 import cats.implicits._
-import sandbox.model.Person
+import sandbox.exercisePrintableLibrary.Printable
+import sandbox.model.{Cat, Person}
 import sandbox.typeclass.{Json, JsonWriter}
 import sandbox.typeclass.JsonWriterInstances._
+import sandbox.exercisePrintableLibrary.PrintableInstances._
 import sandbox.typeclass.JsonSyntax._
 
 object Main extends App {
@@ -23,6 +25,10 @@ object Main extends App {
   //implicit def
   println(Json.toJson(Option("Some String")))
   println(Json.toJson(Option(123)))
+
+  //print cat (exercisePrintableLibrary)
+  val cat = Cat("Kater Mau", 8, "black")
+  Printable.print(cat)
 
 
 }
