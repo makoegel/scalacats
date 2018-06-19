@@ -1,5 +1,7 @@
 package sandbox.exercisePrintableLibrary
 
+import java.time.LocalDate
+
 import sandbox.model.Cat
 
 object PrintableInstances {
@@ -26,6 +28,16 @@ object PrintableInstances {
        val color = Printable.format(cat.color)
         s"$name is a $age year-old $color cat."
 
+      }
+    }
+
+  implicit val datePrintable: Printable[LocalDate] =
+    new Printable[LocalDate]{
+      def format(date: LocalDate) : String = {
+        val day = Printable.format(date.getDayOfMonth)
+        val month = Printable.format(date.getMonthValue)
+        val year = Printable.format(date.getYear)
+        s"$day.$month.$year"
       }
     }
 
