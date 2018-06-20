@@ -12,11 +12,11 @@ object PrintableExample {
   def execute(): Unit = {
 
     println("--- Execute Printable: ---")
-    //print cat (exercisePrintableLibrary)
+    //print cat (exercisePrintableLibrary) wit (PrintableInstances)
     val cat = Cat("Kater Mau", 8, "black")
     Printable.print(cat)
 
-    //extension Method for Case Class Cat
+    //extension Method for Case Class Cat (PrintableSyntax)
     println(cat.format)
     cat.print
 
