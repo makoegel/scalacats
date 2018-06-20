@@ -1,9 +1,5 @@
 package sandbox.typeclasses
 
-trait Semigroup[A] {
-  def combine(a: A, b: A): A
-}
-
 trait Monoid[A] extends Semigroup[A] {
   def empty: A
 }

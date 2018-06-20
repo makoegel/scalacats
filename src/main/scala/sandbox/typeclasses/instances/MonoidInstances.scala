@@ -35,8 +35,16 @@ object MonoidInstances {
   //must be def, because of type parameter
   implicit def setUnionMonoid[A]: Monoid[Set[A]] =
     new Monoid[Set[A]] {
+      println("setUnionMonoid")
       override def combine(a: Set[A], b: Set[A]): Set[A] = a.union(b)
       override def empty: Set[A] = Set.empty[A]
     }
+
+  implicit val intMonoid: Monoid[Int] = {
+    new Monoid[Int] {
+      override def combine(a: Int, b: Int): Int = a + b
+      override def empty: Int = 0
+    }
+  }
 
 }
