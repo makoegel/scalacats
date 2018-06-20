@@ -1,14 +1,17 @@
 package sandbox.exercisePrintableLibrary
 
 import java.time.LocalDate
-import sandbox.exercisePrintableLibrary.PrintableInstances._
-import sandbox.exercisePrintableLibrary.PrintableSyntax._
+
+import sandbox.typeclasses.instances.PrintableInstances._
+import sandbox.typeclasses.syntax.PrintableSyntax._
 import sandbox.model.Cat
+import sandbox.typeclasses.Printable
 
-object ExecutePrintable {
-  def execute (): Unit = {
+object PrintableExample {
 
-    println("Execute Printable: ")
+  def execute(): Unit = {
+
+    println("--- Execute Printable: ---")
     //print cat (exercisePrintableLibrary)
     val cat = Cat("Kater Mau", 8, "black")
     Printable.print(cat)

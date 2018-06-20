@@ -1,4 +1,4 @@
-package sandbox.meetCats
+package sandbox.typeclasses.instances
 
 import java.time.LocalDateTime
 

@@ -1,13 +1,14 @@
-package sandbox.typeclass
+package sandbox.exerciseJsonWriter
 
 import sandbox.model.Person
-import sandbox.typeclass.JsonWriterInstances._
-import sandbox.typeclass.JsonSyntax._
+import sandbox.typeclasses.instances.JsonWriterInstances._
+import sandbox.typeclasses.syntax.JsonSyntax._
+import sandbox.typeclasses.{Json, JsonWriter}
 
-object ExecuteJsonWriter {
+object JsonWriterExample {
 
-  def execute() : Unit = {
-    println("Execute JsonWriter: ")
+  def execute(): Unit = {
+    println("--- Execute JsonWriter: ---")
     // JsonWriterInstances implicit vals
     println(Json.toJson(Person("Example", "Example@github.de")))
     println(Json.toJson("Example"))

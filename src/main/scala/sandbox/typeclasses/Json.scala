@@ -1,4 +1,4 @@
-package sandbox.typeclass
+package sandbox.typeclasses
 
 // Type class :Interface, that represents functionality for implementation
 sealed trait Json
@@ -18,13 +18,4 @@ object Json {
 
   def toJson[A](value: A)(implicit w: JsonWriter[A]): Json =
     w.write(value)
-}
-
-// Interface Syntax
-object JsonSyntax {
-  implicit class JsonWriterOps[A](value: A) {
-
-    def toJson(implicit w: JsonWriter[A]): Json =
-      w.write(value)
-  }
 }

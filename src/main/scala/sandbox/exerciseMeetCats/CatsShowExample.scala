@@ -1,17 +1,17 @@
-package sandbox.meetCats
+package sandbox.exerciseMeetCats
 import java.time.LocalDateTime
 
 import cats.Show
 import cats.instances.int._
 import cats.instances.string._
 import cats.syntax.show._
-import CustomShowInstances._
+import sandbox.typeclasses.instances.CustomShowInstances._
 import sandbox.model.Cat
 
 object CatsShowExample {
 
   def execute(): Unit = {
-    println("CatsShowExample")
+    println("--- CatsShowExample ---")
 
     val showInt = Show.apply[Int]
     val showString = Show.apply[String]

@@ -1,11 +1,11 @@
-package sandbox.meetCats
+package sandbox.typeclasses.instances
 
 import java.time.{LocalDateTime, ZoneId}
 
 import cats.Eq
 import cats.instances.int._
-import cats.instances.string._
 import cats.instances.long._
+import cats.instances.string._
 import cats.syntax.eq._
 import sandbox.model.Cat
 

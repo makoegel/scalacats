@@ -1,4 +1,4 @@
-package sandbox.meetCats
+package sandbox.exerciseMeetCats
 import java.time.LocalDateTime
 
 import cats.Eq
@@ -6,13 +6,13 @@ import cats.instances.int._
 import cats.instances.option._
 import cats.syntax.eq._
 import cats.syntax.option._
-import CustomEqInstances._
+import sandbox.typeclasses.instances.CustomEqInstances._
 import sandbox.model.Cat
 
 object CatsEqExample {
 
   def execute(): Unit = {
-    println("Execute CatsEqExample: ")
+    println("--- Execute CatsEqExample: ---")
 
     val eqInt = Eq[Int]
     val int1 = 123

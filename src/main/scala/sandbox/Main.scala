@@ -1,18 +1,18 @@
 package sandbox
 
 import cats.implicits._
-import sandbox.meetCats.CatsEqExample
-//import sandbox.exercisePrintableLibrary.ExecutePrintable
-//import sandbox.meetCats.CatsShowExample
-//import sandbox.typeclass.ExecuteJsonWriter
+import sandbox.exerciseJsonWriter.JsonWriterExample
+import sandbox.exerciseMeetCats.{CatsEqExample, CatsShowExample}
+import sandbox.exercisePrintableLibrary.PrintableExample
 
 object Main extends App {
   println("Hello " |+| "Cats!")
 
-  // ExecuteJsonWriter.execute
+  JsonWriterExample.execute
 
-  // ExecutePrintable.execute
+  PrintableExample.execute
 
-  // CatsShowExample.execute()
-  CatsEqExample.execute()
+  CatsEqExample.execute
+  CatsShowExample.execute
+
 }
