@@ -31,4 +31,12 @@ object MonoidInstances {
       override def empty: Boolean = true
     }
   }
+
+  //must be def, because of type parameter
+  implicit def setUnionMonoid[A]: Monoid[Set[A]] =
+    new Monoid[Set[A]] {
+      override def combine(a: Set[A], b: Set[A]): Set[A] = a.union(b)
+      override def empty: Set[A] = Set.empty[A]
+    }
+
 }
