@@ -7,6 +7,7 @@ import cats.instances.option._
 import cats.syntax.eq._
 import cats.syntax.option._
 import CustomEqInstances._
+import sandbox.model.Cat
 
 object CatsEqExample {
 
@@ -46,6 +47,17 @@ object CatsEqExample {
 
     println("isTimeEqual: " + isTimeEqual)
     println("isTimeDifferent: " + isTimeDifferent)
+
+    val cat1 = Cat("Garfield", 38, "orange and black")
+    val cat2 = Cat("Heathcliff", 33, "orange and black")
+
+    val optionCat1 = Option(cat1)
+    val optionCat2 = Option.empty[Cat]
+
+    println("cat1 === cat1 : " + (cat1 === cat1))
+    println("cat1 === cat2 : " + (cat1 === cat2))
+    println("optionCat1 === optionCat1 : " + (optionCat1 === optionCat1))
+    println("optionCat1 === optionCat2 : " + (optionCat1 === optionCat2))
 
   }
 }
