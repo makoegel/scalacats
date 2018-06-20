@@ -6,14 +6,14 @@ object MonoidInstances {
 
   implicit val booleanAndMonoid: Monoid[Boolean] = {
     new Monoid[Boolean] {
-      override def combine(a: Boolean, b: Boolean) = a && b
+      override def combine(a: Boolean, b: Boolean): Boolean = a && b
       override def empty = true
     }
   }
 
   implicit val booleanOrMonoid: Monoid[Boolean] = {
     new Monoid[Boolean] {
-      override def combine(a: Boolean, b: Boolean) = a || b
+      override def combine(a: Boolean, b: Boolean): Boolean = a || b
       override def empty = false
     }
   }

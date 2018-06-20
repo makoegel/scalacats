@@ -10,7 +10,7 @@ trait Monoid[A] extends Semigroup[A] {
 
 object Monoid {
 
-  def apply[A](implicit monoid: Monoid[A]) = monoid
+  def apply[A](implicit monoid: Monoid[A]): Monoid[A] = monoid
 
   def associativeLaw[A](a: A, b: A, c: A)(implicit m: Monoid[A]): Boolean =
     m.combine(a, m.combine(b, c)) == m.combine(m.combine(a, b), c)
