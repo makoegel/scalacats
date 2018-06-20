@@ -1,7 +1,7 @@
 package sandbox.typeclasses
 
 trait Semigroup[A] {
-  def combine(x: A, y: A): A
+  def combine(a: A, b: A): A
 }
 
 trait Monoid[A] extends Semigroup[A] {
@@ -10,9 +10,12 @@ trait Monoid[A] extends Semigroup[A] {
 
 object Monoid {
 
-  def associativeLaw[A](x: A, y: A, z: A)(implicit m: Monoid[A]): Boolean =
-    m.combine(x, m.combine(y, z)) == m.combine(m.combine(x, y), z)
+  def apply[A](implicit monoid: Monoid[A]) = monoid
 
-  def identityLaw[A](x: A)(implicit m: Monoid[A]): Boolean =
-    (m.combine(x, m.empty) == x) && (m.combine(m.empty, x) == x)
+  def associativeLaw[A](a: A, b: A, c: A)(implicit m: Monoid[A]): Boolean =
+    m.combine(a, m.combine(b, c)) == m.combine(m.combine(a, b), c)
+
+  def identityLaw[A](a: A)(implicit m: Monoid[A]): Boolean =
+    (m.combine(a, m.empty) == a) && (m.combine(m.empty, a) == a)
+
 }
