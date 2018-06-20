@@ -1,6 +1,6 @@
 package sandbox.exerciseMonoid
 
-import sandbox.typeclasses.Monoid
+import cats.kernel.Monoid
 import sandbox.typeclasses.instances.MonoidInstances._
 
 object MonoidExample {

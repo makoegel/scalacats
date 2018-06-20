@@ -1,6 +1,7 @@
 package sandbox.typeclasses.instances
 
-import sandbox.typeclasses.Monoid
+import cats.Monoid
+import sandbox.model.Order
 
 object MonoidInstances {
 
@@ -44,6 +45,17 @@ object MonoidInstances {
     new Monoid[Int] {
       override def combine(a: Int, b: Int): Int = a + b
       override def empty: Int = 0
+    }
+  }
+
+  implicit val orderMonoid: Monoid[Order] = {
+    new Monoid[Order] {
+      def combine(o1: Order, o2: Order) =
+        Order(
+          o1.totalCost + o2.totalCost,
+          o1.quantity + o2.quantity
+        )
+      def empty = Order(0, 0)
     }
   }
 
