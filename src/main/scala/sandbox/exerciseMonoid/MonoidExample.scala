@@ -6,7 +6,7 @@ import sandbox.typeclasses.instances.MonoidInstances._
 object MonoidExample {
 
   def execute(): Unit = {
-    println("--- Execute Monoid: ---")
+    println("--- Execute Monoidexample: ---")
 
     val intSetMonoid = Monoid[Set[Int]]
 
