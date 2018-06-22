@@ -1,6 +1,7 @@
 package sandbox
 
 import cats.implicits._
+import sandbox.exerciseFunctor.RealFunctorExample
 import sandbox.exerciseMonoid.{RealMonoidExample, RealSemigroupExample, SemigroupExample}
 /*import sandbox.exerciseJsonWriter.JsonWriterExample
 import sandbox.exerciseMeetCats.{CatsEqExample, CatsShowExample}
@@ -21,5 +22,7 @@ object Main extends App {
   SemigroupExample.execute()
   RealSemigroupExample.execute()
   RealMonoidExample.execute()
+
+  RealFunctorExample.execute()
 
 }
