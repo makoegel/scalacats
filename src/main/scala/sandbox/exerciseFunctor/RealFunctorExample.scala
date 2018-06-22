@@ -17,6 +17,14 @@ object RealFunctorExample {
     println("Composition with map: " + func1.map(func2)(1))
     println("Composition with andThen: " + func1.andThen(func2)(1))
     println("Composition by hand: " + func2(func1(1)))
+
+    val func =
+      ((x: Int) => x.toDouble)
+        .map(x => x + 1)
+        .map(x => x * 2)
+        .map(x => x + "!")
+
+    println("Function chain: " + func(123))
   }
 
 }
